@@ -3,10 +3,11 @@ local wezterm = require("wezterm")
 
 -- This table will hold the configuration.
 local config = {
-	default_prog = { "wsl" },
+	-- default_prog = { "pwd" },
 	force_reverse_video_cursor = true,
 	colors = {
 		foreground = "#dcd7ba",
+
 		background = "#181616",
 
 		cursor_bg = "#c8c093",
@@ -37,6 +38,14 @@ config.window_padding = {
 	right = 0,
 	left = 0,
 }
+
+-- jos3lo config
+config.default_cwd = "/home/lagarto/dev/"
+-- config.default_prog = { "wsl" }
+config.default_prog = { "wsl", "--exec", "bash", "-c", "cd ~ && cd /home/lagarto/dev && exec bash" }
+
+-- jos3lo config
+
 config.force_reverse_video_cursor = true
 config.colors = {}
 config.colors.foreground = "#dcd7ba"
@@ -53,8 +62,21 @@ config.colors.brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca",
 config.colors.indexed = { [16] = "#ffa066", [17] = "#ff5d62" }
 --  change
 config.window_background_opacity = 0.95
-config.font = wezterm.font("IosevkaTerm NF")
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+-- config.font = wezterm.font("IosevkaTerm NF")
 config.hide_tab_bar_if_only_one_tab = true
+config.font_size = 12.0
+
+-- teclas jos3lo Start
+-- config.keys = {
+-- 	-- Combinación de teclas para abrir una nueva terminal
+-- 	{
+-- 		key = "N", -- Tecla a presionar
+-- 		mods = "CTRL|SHIFT", -- Modificadores (Ctrl + Shift)
+-- 		action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
+-- 	},
+-- }
+-- tecals jos3lo End
 
 -- activate ONLY if windows --
 
@@ -65,10 +87,10 @@ config.hide_tab_bar_if_only_one_tab = true
 
 config.background = {
 	{
-
-		source = { File = { path = "C:/Users/rem/Pictures/wallpapers/wall44.png" } },
+		source = { File = { path = "C:/Users/rem/Pictures/wallpapers/omg.png" } },
 		width = "100%",
-		hsb = { brightness = 0.03 },
+		hsb = { brightness = 0.09 },
+		-- attachment = { Parallax = 0.1 },
 	},
 }
 
